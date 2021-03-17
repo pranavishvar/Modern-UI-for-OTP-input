@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <style>
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            .input-align{
+                position:absolute;
+                top:40%;
+                left:20%;
+            }
+            .title_align{
+                position:absolute;
+                top:15%;
+                left:22%;
+            }
+            body{
+                background-color:dodgerblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "title_align">
+        <h1 style ="font-size: 100px; font-weight: bold; color:white; font-family: 'Courier New', Courier, monospace;">Enter Your OTP</h1>
+        </div>
+        
+        <div class = "input-align">
+        
+        <input id = "input_box_1" type="number" oninput="input_validation_1()" 
+        style = "height:200px; width:200px; font-size: 190px; margin:10px; text-align: center; background-color: white; outline:transparent; border-color: transparent; border-width: 3px; font-weight: bold;"></input>
+        
+        <input id = "input_box_2" type="number" oninput="input_validation_2()" onkeydown="backspace2(event)"
+        style = "height:200px; width:200px; font-size: 190px; margin:10px; text-align: center; background-color: white; outline:transparent; border-color: transparent; border-width: 3px; font-weight: bold;"></input>
+        
+        <input id = "input_box_3" type="number" oninput="input_validation_3()" onkeydown="backspace3(event)"
+        style = "height:200px; width:200px; font-size: 190px; margin:10px; text-align: center; background-color: white; outline:transparent; border-color: transparent; border-width: 3px; font-weight: bold;"></input>
+        
+        <input id = "input_box_4" type="number" oninput="input_validation_4()" onkeydown="backspace4(event)"
+        style = "height:200px; width:200px; font-size: 190px; margin:10px; text-align: center; background-color: white; outline:transparent; border-color: transparent; border-width: 3px; font-weight: bold;"></input>
+        </div>
+        
+        <script>
+            document.getElementById("input_box_1").focus()
+            function input_validation_1() {
+                if(document.getElementById("input_box_1").value.length > 1){
+                    document.getElementById("input_box_1").value = document.getElementById("input_box_1").value[0]
+                }
+                if(document.getElementById("input_box_1").value.length == 1){
+                    document.getElementById("input_box_2").focus()
+                }
+            }
+            function input_validation_2() {
+                if(document.getElementById("input_box_2").value.length > 1){
+                    document.getElementById("input_box_2").value = document.getElementById("input_box_2").value[0]
+                }
+                if(document.getElementById("input_box_2").value.length == 1){
+                    document.getElementById("input_box_3").focus()
+                }
+            }
+            function input_validation_3() {
+                if(document.getElementById("input_box_3").value.length > 1){
+                    document.getElementById("input_box_3").value = document.getElementById("input_box_3").value[0]
+                }
+                if(document.getElementById("input_box_3").value.length == 1){
+                    document.getElementById("input_box_4").focus()
+                }
+            }
+            function input_validation_4() {
+                if(document.getElementById("input_box_4").value.length > 1){
+                    document.getElementById("input_box_4").value = document.getElementById("input_box_4").value[0]
+                }
+            }
+            function backspace4(event){
+            if (event.key == "Backspace"){
+                if(document.getElementById("input_box_4").value.length == 0){
+                    document.getElementById("input_box_3").focus()
+                 }
+            }
+            }
+            function backspace3(event){
+            if (event.key == "Backspace"){
+                if(document.getElementById("input_box_3").value.length == 0){
+                    document.getElementById("input_box_2").focus()
+                 }
+            }
+            }
+            function backspace2(event){
+            if (event.key == "Backspace"){
+                if(document.getElementById("input_box_2").value.length == 0){
+                    document.getElementById("input_box_1").focus()
+                 }
+            }
+            }
+        </script>
+    </body>
+</html>
